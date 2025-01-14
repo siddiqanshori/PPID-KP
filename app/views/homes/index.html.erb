@@ -1,0 +1,159 @@
+<%= javascript_include_tag 'application' %>
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<div class="welcome-area" id="welcome">
+    <div class="header-text">
+        <div class="container">
+            <div class="row">
+              <div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                <h1>PPID<strong> Kota Cimahi</strong></h1>
+                  <p>Keterbukaan informasi publik merupakan sarana dalam mengoptimalkan pengawasan publik terhadap penyelenggaraan negara dan Badan Publik lainnya dan segala sesuatu yang berakibat pada kepentingan publik sebagaimana yang diamanatkan dalam Undang-Undang Nomor 14 Tahun 2008.</p>
+                  <%# <a href="#about" class="main-button-slider">Find Out More</a> %>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                <%= image_tag 'slider-icon.png', alt: '#', class: 'rounded img-fluid d-block mx-auto' %>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <%= image_tag 'left-image.png', alt: '#', class: 'rounded img-fluid d-block mx-auto' %>
+                </div>
+                <div class="right-text col-lg-5 col-md-12 col-sm-12 mobile-top-fix">
+                    <div class="left-heading">
+                        <h5>SIMPONI</h5>
+                    </div>
+                    <div class="left-text">
+                        <p>SIMPONI Merupakan Sistem Permohonan Informasi Kota Cimahi, dimana saat ini sudah ada sekitar <%= @documenCount %> Dokumen yang tersedia, dan sudah ada <%= @pengajuaninformasiCount %> total pengajuan informasi </p>
+                        <%# <a href="#about2" class="main-button">Discover More</a> %>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hr"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+
+    <section class="section" id="about2">
+        <div class="container">
+            <div class="row">
+                <div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix">
+                    <div class="left-heading">
+                        <h5>Jenis Dokumensi Informasi</h5>
+                    </div>
+                    <p>Dalam Dokumentasi Informasi nya terdapat beberapa jenis</p>
+                    <ul>
+                        <li>
+                            <!-- <img src="assets/images/about-icon-01.png" alt=""> -->
+                            <%= image_tag 'about-icon-01.png', alt: '#'%>
+                            <div class="text">
+                                <h6>PPID</h6>
+                                <p>PPID (Pejabat Pengelola Informasi dan Dokumentasi) adalah entitas yang bertanggung jawab untuk menyediakan akses informasi publik dan memastikan transparansi. Berdasarkan PPID terdapat 3 jenis, Utama, Pelaksana dan Pembantu.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <!-- <img src="assets/images/about-icon-02.png" alt=""> -->
+                            <%= image_tag 'about-icon-02.png', alt: '#'%>
+                            <div class="text">
+                                <h6>Informasi</h6>
+                                <p>Informasi adalah data yang dikelola dan disediakan untuk masyarakat, mencakup berbagai aspek yang relevan dengan kepentingan publik. Berdasarkan Informasi terdapat 4 jenis, berkala, setiap saat, serta merta dan dikecualikan.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <!-- <img src="assets/images/about-icon-03.png" alt=""> -->
+                            <%= image_tag 'about-icon-03.png', alt: '#'%>
+                            <div class="text">
+                                <h6>Jenis Dokumen</h6>
+                                <p>Berbagai jenis dokumen yang tersedia untuk masyarakat. Berdasarkan Jenis Dokumen nya terdapat 10 jenis, profil dan badan publik, program dan kegiatan, informasi kinerja, laporan keuangan, laporan dan prosedur, pengaduan dan pelanggaran, pengadaan barang dan jasa, informasi darurat, hasil penelitian, regulasi.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-image col-lg-7 col-md-12 col-sm-12 mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <%= image_tag 'right-image.png', alt: '#', class: 'rounded img-fluid d-block mx-auto'%>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+
+    <section class="section" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="owl-carousel owl-theme">
+                    <div class="item service-item">
+                        <h2 class="service-title">Jumlah Dokumen Tersedia</h2>
+                        <h3><%= @documenCount%></h3>
+                    </div>
+                    <div class="item service-item">
+                      <h2 class="service-title">Jumlah Pengajuan Informasi</h2>
+                      <h3><%= @pengajuaninformasiCount%></h3>
+                    </div>
+                    <div class="item service-item">
+                      <h2 class="service-title">Jumlah Akses Informasi</h2>
+                      <h3><%= total_access_count %></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Small End ***** -->
+
+
+    <!-- ***** Frequently Question Start ***** -->
+    <section class="section" id="frequently-question">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h2>Data Riwayat</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="left-text col-lg-6 col-md-6 col-sm-12">
+                <h5>Riwayat Pengajuan Informasi</h5>
+                <div class="accordion-text">
+                    <%= line_chart Pengajuaninformasi.grouped_by_day_in_jakarta %>
+                </div>
+              </div>
+              <div class="right-text col-lg-6 col-md-6 col-sm-12">
+                <h3>Riwayat Akses Informasi</h3>
+                <br />
+                <div class="accordion-text">
+                    <%= column_chart Dokuman.sum_access_count_by_day_in_jakarta %>
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact-us">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.1711764242077!2d107.55171880985391!3d-6.870082193099933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e5b99d5bc289%3A0x918cd4f894a1460b!2sDinas%20Komunikasi%20Informatika%20Kearsipan%20Dan%20Perpustakaan%20Cimahi!5e0!3m2!1sid!2sid!4v1723012050950!5m2!1sid!2sid" width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="contact-form">
+                        <h3>Status Pengajuan Informasi</h3>
+                        <%= pie_chart Pengajuaninformasi.group(:status).count %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

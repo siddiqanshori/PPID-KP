@@ -1,0 +1,70 @@
+# Additional translations at https://github.com/heartcombo/devise/wiki/I18n
+
+id:
+  devise:
+    failure:
+      unauthenticated: "Anda perlu masuk atau mendaftar terlebih dahulu."
+
+id:
+  devise:
+    confirmations:
+      confirmed: "Alamat email Anda telah berhasil dikonfirmasi."
+      send_instructions: "Anda akan menerima email dengan petunjuk untuk mengonfirmasi alamat email Anda dalam beberapa menit."
+      send_paranoid_instructions: "Jika alamat email Anda terdaftar di database kami, Anda akan menerima email dengan petunjuk untuk mengonfirmasi alamat email Anda dalam beberapa menit."
+    failure:
+      already_authenticated: "Anda sudah masuk."
+      inactive: "Akun Anda belum diaktivasi."
+      invalid: "Email atau kata sandi %{authentication_keys} tidak valid."
+      locked: "Akun Anda terkunci."
+      last_attempt: "Anda memiliki satu percobaan lagi sebelum akun Anda terkunci."
+      not_found_in_database: "Email atau kata sandi %{authentication_keys} tidak valid."
+      timeout: "Sesi Anda telah kedaluwarsa. Silakan masuk lagi untuk melanjutkan."
+      unauthenticated: "Anda perlu masuk atau mendaftar terlebih dahulu."
+      unconfirmed: "Anda harus mengonfirmasi alamat email Anda sebelum melanjutkan."
+    mailer:
+      confirmation_instructions:
+        subject: "Petunjuk Konfirmasi"
+      reset_password_instructions:
+        subject: "Petunjuk Reset Kata Sandi"
+      unlock_instructions:
+        subject: "Petunjuk Pembukaan Akun"
+      email_changed:
+        subject: "Email Berhasil Diubah"
+      password_change:
+        subject: "Kata Sandi Berhasil Diubah"
+    omniauth_callbacks:
+      failure: "Gagal mengautentikasi melalui %{kind} karena \"%{reason}\"."
+      success: "Berhasil mengautentikasi melalui akun %{kind}."
+    passwords:
+      no_token: "Anda tidak dapat mengakses halaman ini tanpa datang dari email reset kata sandi. Jika Anda datang dari email reset kata sandi, pastikan Anda menggunakan URL lengkap yang diberikan."
+      send_instructions: "Anda akan menerima email dengan petunjuk untuk mereset kata sandi Anda dalam beberapa menit."
+      send_paranoid_instructions: "Jika alamat email Anda terdaftar di database kami, Anda akan menerima link pemulihan kata sandi di email Anda dalam beberapa menit."
+      updated: "Kata sandi Anda telah berhasil diubah. Anda sekarang masuk."
+      updated_not_active: "Kata sandi Anda telah berhasil diubah."
+    registrations:
+      destroyed: "Selamat tinggal! Akun Anda telah berhasil dibatalkan. Kami berharap dapat melihat Anda lagi segera."
+      signed_up: "Selamat datang! Anda berhasil mendaftar."
+      signed_up_but_inactive: "Anda berhasil mendaftar. Namun, kami tidak dapat masuk karena akun Anda belum diaktivasi."
+      signed_up_but_locked: "Anda berhasil mendaftar. Namun, kami tidak dapat masuk karena akun Anda terkunci."
+      signed_up_but_unconfirmed: "Pesan dengan link konfirmasi telah dikirimkan ke alamat email Anda. Silakan ikuti link tersebut untuk mengaktifkan akun Anda."
+      update_needs_confirmation: "Anda berhasil memperbarui akun, tetapi kami perlu memverifikasi alamat email baru Anda. Silakan cek email Anda dan ikuti link konfirmasi untuk mengonfirmasi alamat email baru Anda."
+      updated: "Akun Anda berhasil diperbarui."
+      updated_but_not_signed_in: "Akun Anda berhasil diperbarui, tetapi karena kata sandi Anda diubah, Anda perlu masuk lagi."
+    sessions:
+      signed_in: "Berhasil masuk."
+      signed_out: "Berhasil keluar."
+      already_signed_out: "Anda telah keluar."
+    unlocks:
+      send_instructions: "Anda akan menerima email dengan petunjuk untuk membuka akun Anda dalam beberapa menit."
+      send_paranoid_instructions: "Jika akun Anda terdaftar, Anda akan menerima email dengan petunjuk untuk membuka akun Anda dalam beberapa menit."
+      unlocked: "Akun Anda telah berhasil dibuka. Silakan masuk untuk melanjutkan."
+  errors:
+    messages:
+      already_confirmed: "sudah dikonfirmasi, silakan coba masuk"
+      confirmation_period_expired: "perlu dikonfirmasi dalam %{period}, silakan minta yang baru"
+      expired: "sudah kedaluwarsa, silakan minta yang baru"
+      not_found: "tidak ditemukan"
+      not_locked: "tidak terkunci"
+      not_saved:
+        one: "1 kesalahan mencegah %{resource} ini disimpan:"
+        other: "%{count} kesalahan mencegah %{resource} ini disimpan:"

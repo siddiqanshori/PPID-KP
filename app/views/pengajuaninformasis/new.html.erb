@@ -1,0 +1,171 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Styling untuk h1 Pengajuan Informasi */
+  .title-pengajuan-informasi {
+    font-size: 42px; /* Ukuran font besar untuk judul */
+    font-weight: 700; /* Font tebal */
+    color: #333; /* Warna abu-abu gelap untuk kesan profesional */
+    text-align: center; /* Menyelaraskan teks ke tengah */
+    margin-bottom: 50px; /* Ruang bawah yang cukup */
+    text-transform: uppercase; /* Membuat teks kapital semua */
+    letter-spacing: 2px; /* Memberikan jarak antar huruf */
+    line-height: 1.3; /* Jarak antar baris */
+    transition: color 0.3s ease, transform 0.3s ease; /* Efek transisi saat hover */
+  }
+
+  /* Efek hover untuk h1 Pengajuan Informasi */
+  .title-pengajuan-informasi:hover {
+    color: #0074b3; /* Mengubah warna menjadi biru saat hover */
+    transform: scale(1.05); /* Sedikit membesarkan teks saat hover */
+  }
+
+  /* Styling untuk h4 Form Pengajuan Informasi */
+  .form-pengajuan-informasi {
+    font-size: 24px; /* Ukuran font lebih besar */
+    font-weight: 600; /* Teks lebih tebal */
+    color: #0074b3; /* Warna biru untuk menonjolkan judul */
+    text-align: center; /* Menyelaraskan teks ke tengah */
+    padding: 15px 0;
+    margin-bottom: 20px; /* Memberikan jarak bawah */
+    border-bottom: 3px solid #0074b3; /* Garis bawah tebal */
+    transition: border-color 0.3s ease, color 0.3s ease; /* Transisi halus */
+  }
+
+  /* Efek hover untuk h4 Form Pengajuan Informasi */
+  .form-pengajuan-informasi:hover {
+    border-bottom-color: #0056b3; /* Mengubah warna garis bawah saat hover */
+    color: #0056b3; /* Mengubah warna teks menjadi lebih gelap */
+  }
+
+  /* Styling untuk h4 Status Pengajuan Informasi Saya */
+  .tabel-status-pengajuan {
+    font-size: 24px; /* Ukuran font lebih besar */
+    font-weight: 600; /* Teks lebih tebal */
+    color: #0074b3; /* Warna biru untuk kesan profesional */
+    text-align: center; /* Menyelaraskan teks ke tengah */
+    padding: 15px 0;
+    margin-bottom: 50px;
+    border-bottom: 3px solid #0074b3; /* Garis bawah tebal */
+    transition: border-color 0.3s ease, color 0.3s ease; /* Transisi halus */
+  }
+
+  /* Efek hover untuk h4 Status Pengajuan Informasi Saya */
+  .tabel-status-pengajuan:hover {
+    border-bottom-color: #0056b3; /* Mengubah warna garis bawah saat hover */
+    color: #0056b3; /* Mengubah warna teks menjadi lebih gelap */
+  }
+
+  /* Styling tabel */
+  .table {
+    width: 100%; /* Lebar penuh */
+    border-collapse: collapse; /* Menghapus jarak antar border */
+    border: 1px solid #ddd; /* Border luar */
+    transition: all 0.3s ease;
+  }
+
+  .table th, .table td {
+    border: 1px solid #ddd; /* Border setiap sel */
+    text-align: center; /* Teks di tengah */
+    padding: 12px; /* Padding untuk ruang */
+    box-sizing: border-box; /* Padding tidak mempengaruhi ukuran kolom */
+  }
+
+  .table thead th {
+    background-color: #0074b3; /* Latar belakang biru pada header */
+    color: white; /* Warna teks putih */
+    transition: background-color 0.3s ease;
+  }
+
+  /* Hover pada baris header tabel */
+  .table thead:hover th {
+    background-color: #0056b3; /* Mengubah warna latar belakang saat hover */
+  }
+
+  .table tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9; /* Warna latar belakang baris ganjil */
+  }
+
+  .table tbody tr:hover {
+    background-color: #f1f1f1; /* Efek hover untuk seluruh baris tabel */
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+</style>
+
+<div class="welcome-area" id="welcome">
+    <div class="header-text">
+        <div class="container">
+            <div class="row">
+                <div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <h1>Pengajuan Informasi<strong> Kota Cimahi</strong></h1>
+                    <%# <a href="#about" class="main-button-slider">Cari Tahu Selengkapnya</a> %>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <%= image_tag 'slider-icon.png', alt: '#', class: 'rounded img-fluid d-block mx-auto' %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="section" id="about">
+  <div class="container">
+    <center>
+      <h1 class="title-pengajuan-informasi">Pengajuan Informasi</h1>
+    </center>
+
+    <% if notice.present? %>
+      <div class="alert alert-success">
+        <%= notice %>
+      </div>
+    <% elsif alert.present? %>
+      <div class="alert alert-danger">
+        <%= alert %>
+      </div>
+    <% end %>
+    
+    <div class="row">
+      <!-- Kolom kiri: Form Pengajuan Informasi -->
+      <div class="col-lg-6 col-md-6">
+        <center>
+          <h4 class="form-pengajuan-informasi">Form Pengajuan Informasi</h4>
+        </center>
+        <%= render "form", pengajuaninformasi: @pengajuaninformasi %>
+      </div>
+
+      <!-- Kolom kanan: Tabel Status Pengajuan Informasi -->
+      <div class="col-lg-6 col-md-6">
+        <h4 class="tabel-status-pengajuan">Status Pengajuan Informasi Saya</h4>
+        <div id="pengajuaninformasis">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Jenis Permohonan</th>
+                <th scope="col">Kebutuhan</th>
+                <th scope="col">Tujuan</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @myPengajuan.each_with_index do |pengajuan, index| %>
+                <tr>
+                  <th scope="row"><%= index + 1 %></th>
+                  <td><%= pengajuan.jenisPermohonan %></td>
+                  <td><%= pengajuan.kebutuhan %></td>
+                  <td><%= pengajuan.tujuan %></td>
+                  <td><%= pengajuan.status %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="left">
+          <%= paginate @myPengajuan %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

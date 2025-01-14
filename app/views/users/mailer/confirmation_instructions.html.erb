@@ -1,0 +1,4 @@
+<!-- app/views/users/mailer/confirmation_instructions.html.erb -->
+<h1>Halo, <%= @user.nama_lengkap %>!</h1>
+<p>Silakan klik link di bawah ini untuk mengonfirmasi akun Anda:</p>
+<p><%= link_to 'Konfirmasi Akun', confirmation_url(@user, @token) %></p>

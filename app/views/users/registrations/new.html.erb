@@ -1,0 +1,107 @@
+<% if flash[:notice] %>
+  <div class="flash notice">
+    <%= flash[:notice] %> Silakan cek email Anda untuk mengonfirmasi akun.
+  </div>
+<% end %>
+
+<style>
+  body {
+    padding: 40px;
+  }
+  .btn-custom {
+    color: #17a2b8;
+    background-color: #ffffff;
+    border: 1px solid #17a2b8;
+  }
+
+  .btn-custom:hover {
+    background-color: #f8f9fa;
+    border-color: #17a2b8;
+  }
+
+  .logo-image {
+    padding-top: 20px;
+    width: 110px;
+    height: auto;
+  }
+
+  .field-input {
+    width: 75%;
+    height: 40px;
+    background: #FFFFFF;
+    display: block;
+    margin: 15px auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+  }
+
+  .field-input.text-area {
+    height: 100px; /* Adjust height as needed */
+    resize: vertical; /* Allows vertical resizing */
+  }
+
+  .field-label {
+    display: block;
+    text-align: left;
+    margin: 10px auto 5px auto;
+    width: 75%;
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: bold;
+  }
+
+  /* Mobile view (width up to 767px) */
+  @media (max-width: 767px) {
+    .logo-image {
+      width: 25px;
+      height: auto;
+    }
+  }
+</style>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'signup-form' }) do |f| %>
+<center>
+  <img src="<%= asset_path 'logo-cimahi.png' %>" alt="Logo Cimahi" class="logo-image">
+  <h3 style="color: white">DAFTAR AKUN</h3>
+</center>
+
+<% if flash[:alert] %>
+  <div class="flash alert">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
+<p class="field-label">Nomor KTP</p>
+<%= f.number_field :ktp, required: true, placeholder: 'Isi KTP 16 Digit', class: 'field-input', maxlength: 16, oninput: "if(this.value.length > 16) this.value = this.value.slice(0, 16)" %>
+
+<p class="field-label">Nama Lengkap</p>
+<%= f.text_field :nama_lengkap, required: true, placeholder: 'Isi Nama Lengkap Anda', class: 'field-input' %>
+
+<p class="field-label">Nomor Telepon</p>
+<%= f.number_field :telepon, required: true, placeholder: 'Isi Nomor Telepon Anda: 081234567XXX', class: 'field-input' %>
+
+<p class="field-label">Alamat</p>
+<%= f.text_area :alamat, required: true, placeholder: 'Isi Alamat Lengkap Anda', class: 'field-input text-area' %>
+
+<p class="field-label">Pekerjaan</p>
+<%= f.text_field :pekerjaan, required: true, placeholder: 'Isi Pekerjaan Anda', class: 'field-input' %>
+
+<p class="field-label">Username</p>
+<%= f.text_field :username, required: true, placeholder: 'Isi Username Anda', class: 'field-input' %>
+
+<p class="field-label">Email</p>
+<%= f.email_field :email, required: true, autofocus: true, autocomplete: "email", placeholder: 'Isi Email Anda', class: 'field-input' %>
+
+<p class="field-label">Password</p>
+<%= f.password_field :password, required: true, autocomplete: "new-password", placeholder: 'Buat Password Anda', class: 'field-input' %>
+
+<p class="field-label">Konfirmasi Password</p>
+<%= f.password_field :password_confirmation, required: true, autocomplete: "new-password", placeholder: 'Masukkan Kembali Password Anda', class: 'field-input' %>
+
+<div class="actions">
+  <%= f.submit "Daftar", class: 'btn' %>
+  <a href="/users/sign_in" class="btn btn-custom" style="text-align: center; text-decoration:none; display: flex; justify-content: center; align-items: center;">Masuk</a>
+</div>
+<% end %>
